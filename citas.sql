@@ -1,4 +1,4 @@
--- Active: 1689076122584@@localhost@3306@citas
+-- Active: 1688675381764@@127.0.0.1@3306
 use citas;
 
 CREATE TABLE usuario (
@@ -130,8 +130,7 @@ INSERT INTO medico (med_nroMatriculaProsional, med_nombreCompleto, med_consultor
 INSERT INTO estado_cita (estcita_id, estcita_nombre) VALUES (1, 'Pendiente');
 INSERT INTO estado_cita (estcita_id, estcita_nombre) VALUES (2, 'Confirmada');
 INSERT INTO estado_cita (estcita_id, estcita_nombre) VALUES (3, 'Cancelada');
-INSERT INTO estado_cita (estcita_id, estcita_nombre) VALUES (4, 'Realizada');
-INSERT INTO estado_cita (estcita_id, estcita_nombre) VALUES (5, 'Ausente');
+
 
 
 

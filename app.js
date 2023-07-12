@@ -4,8 +4,9 @@ import express from 'express';
 import 'reflect-metadata';
 
 //? Routes
-import storageUsuario from './routes/usuario.js'
-import storageCita from './routes/cita.js'
+import storageUsuario from './routes/usuario.js';
+import storageCita from './routes/cita.js';
+import storageMedico from './routes/medico.js'
 
 //? Enviroment Variables
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.json());
 //? Use routes
 app.use("/usuario", storageUsuario);
 app.use("/cita", storageCita);
+app.use("/medico", storageMedico);
 
 
 //? Server

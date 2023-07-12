@@ -9,6 +9,16 @@ dotenv.config("../");
 const storageUsuario = Router();
 
 
-CIT_DAT_USU
-
+storageUsuario.get('/', proxyUsuario, (req, res) => {
+    const action = 'SELECT * FROM usuario ORDER BY usu_nombre ASC';
+    conx.query(
+        action, (err, result)  => {
+            if (err) {
+                console.error('Error de conexion:', err.message);
+                res.status(200);
+            } else {
+                res.send(JSON.stringify(result));
+            }
+        })
+})
 export default storageUsuario;

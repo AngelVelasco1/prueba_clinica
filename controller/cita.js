@@ -23,8 +23,7 @@ __decorate([
         if (Math.floor(value) && typeof value == 'number')
             return Math.floor(value);
         else
-            console.log([]);
-        throw { status: 200, message: 'El codigo de cita contiene parametros incorrectos' };
+            throw { status: 200, message: 'El codigo de cita contiene parametros incorrectos' };
     }, { toClassOnly: true }),
     __metadata("design:type", Number)
 ], Cita.prototype, "CIT_COD", void 0);

@@ -6,7 +6,6 @@ export class Cita {
         if  (Math.floor(value) && typeof value == 'number')  
             return Math.floor(value);
         else 
-            console.log([]);   
             throw { status: 200, message: 'El codigo de cita contiene parametros incorrectos' };
         }, { toClassOnly: true })
     CIT_COD: number;

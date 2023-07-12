@@ -1,15 +1,16 @@
 //? Dependencies
 import dotenv from 'dotenv';
 import { Router } from 'express';
-import proxyCita from '../middleware/proxyCita.js';
-import { conx } from '../middleware/proxyCita.js';
+import proxyMedico from '../middleware/proxyMedico.js';
+import { conx } from '../middleware/proxyMedico.js';
 //? Enviroment Variables
 dotenv.config("../");
 
-const storageCita = Router();
+const storageMedico = Router();
 
-storageCita.get('/', proxyCita, (req, res) => {
-    const action = 'SELECT * FROM cita ORDER BY cit_fecha ASC';
+storageMedico.get('/', proxyMedico, (req, res) => {
+    const action = `SELECT m.*, e.esp_nombre FROM medico m  
+                    INNER JOIN especialidad e ON m.med_especialidad = e.esp_id`;
     conx.query(
         action, (err, result)  => {
             if (err) {
@@ -21,4 +22,4 @@ storageCita.get('/', proxyCita, (req, res) => {
         })
 })
 
-export default storageCita;
+export default storageMedico;
