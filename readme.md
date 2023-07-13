@@ -48,7 +48,7 @@ MY_CONFIG={"hostname": "localhost", "port": 8050}
 La variable de entorno `MY_CONNECT` define los parámetros de conexión a la base de datos, como el host, usuario, contraseña, base de datos y puerto.
 
 ```
-MY_CONNECT={"host": "127.0.0.1", "user": "root", "database": "inventory", "password": "123456", "port": 3306}
+MY_CONNECT={"host": "127.0.0.1", "user": "campus", "database": "citas", "password": "123456", "port": 3306}
 ```
 
 ## Dependencias
@@ -59,7 +59,10 @@ El proyecto utiliza las siguientes dependencias:
 - express - 4.18.2
 - mysql2 - 3.5.0
 - nodemon - 2.0.22
-- class-transformer: 0.5.1,
+- class-transformer: 0.5.1
+- class-validator
+- typescript
+- reflect-metadata
 
 
 ##  Uso de Thunder Client
