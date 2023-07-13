@@ -23,8 +23,7 @@ storageMedico.get('/especialidad', proxyMedico, (req, res) => {
 })
 
 storageMedico.get('/consultorio', proxyMedico, (req, res) => {
-    const action = `
-    SELECT m.*, c.cons_nombre
+    const action = `SELECT m.*, c.cons_nombre
     FROM medico m
     INNER JOIN consultorio c ON m.med_consultorio = c.cons_codigo
 `;

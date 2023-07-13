@@ -25,8 +25,7 @@ storageUsuario.get('/', proxyUsuario, (req, res) => {
 
 storageUsuario.get('/:usu_id', proxyUsuario, (req, res) => {
     const pacienteId = req.params.usu_id;
-    const action = `
-    SELECT c.* FROM cita c
+    const action = `SELECT c.* FROM cita c
     WHERE c.cit_datosUsuario = ${pacienteId} AND c.cit_estadoCita AND c.cit_fecha >= CURDATE()
     ORDER BY c.cit_fecha
     `;

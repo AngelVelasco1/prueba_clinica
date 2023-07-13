@@ -21,4 +21,19 @@ storageCita.get('/', proxyCita, (req, res) => {
         })
 })
 
+storageCita.get('/:cit_fecha', proxyCita, (req, res) => {
+    const citaFecha = req.params.cit_fecha;
+    const action = `SELECT * FROM cita WHERE cit_fecha = ${citaFecha}`;
+    conx.query(
+        action, (err, result)  => {
+            if (err) {
+                console.error('Error de conexion:', err.message);
+                res.status(200);
+            } else {
+                res.send(JSON.stringify(result));
+            }
+        })
+})
+
+
 export default storageCita;
