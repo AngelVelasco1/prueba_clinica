@@ -52,5 +52,21 @@ storageCita.get('/:usu_genero', proxyCita, (req, res) => {
         })
 })
 
+storageCita.get("/citas/:med_nroMatriculaProsional/:cit_fecha", proxyCita, (req, res) => {
+    const matriculaMedico = req.params.med_nroMatriculaProsional;
+    const fechaCita = req.params.cit_fecha;
+    const action = `SELECT COUNT(*) AS total_citas FROM cita 
+                    WHERE cit_medico = ${matriculaMedico} AND cit_fecha = ${fechaCita}`;
+                    
+    conx.query(action, (err, result) => {
+      if (err) {
+        console.error("Error de conexión:", err.message);
+        res.status(200);
+      } else {
+        const totalCitas  = result[0]['total_citas']
+        res.send(`El medico con matricula ${matriculaMedico} tiene ${totalCitas} citas en la fecha ${fechaCita}`);
+      }
+    });
+  });
 
 export default storageCita;
