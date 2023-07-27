@@ -26,29 +26,23 @@ Asegúrate de tener instalado lo siguiente antes de iniciar el proyecto:
 3. Instala las dependencias del proyecto:
 
    ```shell
-   npm install dotenv express mysql2 nodemon -E -D
+   npm i
    ```
-4. Inicia el servidor mediante el comando `npm run dev`.
+4. Inicia el servidor mediante el comando `npm run dev` y el transpilador mediante `npm run tsc`
 
 
-## Configuración
 
-El proyecto utiliza variables de entorno para la configuración de la conexión a la base de datos.
 
-### MY_CONFIG
+## ENV
+Antes de ejecutar la aplicación, asegúrate de crear y configurar el archivo de entorno (.env) con la siguiente estructura y reemplazar los valores por los adecuados:
 
-La variable de entorno `MY_CONFIG` define la configuración del servidor de la base de datos. Debes proporcionar el hostname y el puerto de conexión. 
+```plaintext
 
-```
-MY_CONFIG={"hostname": "localhost", "port": 8050}
-```
+# Configuración general
+CONFIG={"hostname": "localhost", "port": 5050}
 
-### MY_CONNECT
-
-La variable de entorno `MY_CONNECT` define los parámetros de conexión a la base de datos, como el host, usuario, contraseña, base de datos y puerto.
-
-```
-MY_CONNECT={"host": "127.0.0.1", "user": "campus", "database": "citas", "password": "123456", "port": 3306}
+# Conexión a la base de datos
+CONNECT={"host": "localhost", "user": "root", "database": "database", "password": ".....", "port": 3306}
 ```
 
 ## Dependencias
